@@ -1,0 +1,279 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    --header-height: 4rem;
+    --column-padding: 2.5rem 3rem;
+
+    /*============ PRIMARY COLORS ============*/
+    --first-color: hsl(31, 77%, 52%);
+    --second-color: hsl(184, 100%, 22%);
+    --third-color: hsl(179, 100%, 13%);
+
+    /*============ NEUTRAL COLORS ============*/
+    --paragraph-white:  hsla(0, 0%, 100%, 0.75);
+
+    /* ============ Background Headings Buttons  ============*/
+    --light-gray: hsl(0, 0%, 95%);
+
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --heading-font: 'Big Shoulders Display', cursive;
+    --body-font: 'Lexend Deca', sans-serif;
+    --biggest-font-size: 2.25rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    /*========== Font weight ==========*/
+    /* Paragraph Font Weight */
+    --font-medium: 400;
+    /* Headings Font Weight */
+    --font-bold: 700;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 1024px) {
+    :root {
+      --biggest-font-size: 4rem;
+      --h1-font-size: 2.25rem;
+      --h2-font-size: 1.5rem;
+      --h3-font-size: 1.25rem;
+      --normal-font-size: 1rem;
+      --small-font-size: .875rem;
+      --smaller-font-size: .813rem;
+    }
+}
+
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--light-gray);
+    color: var(--paragraph-white);
+}
+
+h1, h2, h3 {
+    color: var(--light-gray);
+    font-weight: var(--font-bold);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+button {
+  font-family: var(--body-font);
+  outline: none;
+  border: none;
+  color: var(--light-gray);
+}
+
+.container {
+    margin: var(--header-height) 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+}
+
+/*=============== FIRST COLUMN ===============*/
+.first-column {
+    background-color: var(--first-color);
+    padding: var(--column-padding);
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.first-column-title,
+.second-column-title,
+.third-column-title {
+    margin: 1.5rem 0;
+    font-family: var(--heading-font);
+    font-weight: var(--font-bold);
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.first-column-paragraph,
+.second-column-paragraph,
+.third-column-paragraph {
+    line-height: 1.6;
+}
+
+.buttons {
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 2rem;
+    background: var(--light-gray);
+    transition: .3s;
+}
+
+.buttons:hover {
+    background: transparent;
+    border: 2px solid var(--light-gray);
+    color: var(--light-gray);
+}
+
+.first__button {
+    color: var(--first-color);
+}
+
+/*=============== SECOND COLUMN ===============*/
+.second-column {
+    background-color: var(--second-color);
+    padding: var(--column-padding);
+}
+
+.second__button {
+    color: var(--second-color);
+}
+
+/*=============== THIRD COLUMN ===============*/
+.third-column {
+    background-color: var(--third-color);
+    padding: var(--column-padding);
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.third__button {
+    color: var(--third-color);
+}
+
+/*=============== FOOTER ===============*/
+.footer {
+    position: relative;
+    bottom: 30px;
+    text-align: center;
+    color: black;
+    font-size: var(--small-font-size);
+}
+
+.footer a {
+    color: var(--first-color);
+    transition: .3s;
+}
+
+.footer a:hover {
+    opacity: 0.75;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 350px) {
+    .container {
+        padding: 2.5rem 1.25rem;
+    }
+
+    .first-column,
+    .second-column,
+    .third-column {
+        padding: 2rem;
+    }
+}
+
+/* For medium devices */
+@media screen and (min-width: 576px) {
+    .container {
+        padding: 2.5rem;
+    }
+
+    .first-column-paragraph,
+    .second-column-paragraph,
+    .third-column-paragraph {
+        padding: 0 3rem 0 0;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .first-column-paragraph,
+    .second-column-paragraph,
+    .third-column-paragraph,
+    .buttons {
+        font-size: 1.1rem;
+    }
+
+    .first-column-title,
+    .second-column-title,
+    .third-column-title {
+        font-size: var(--biggest-font-size);
+    }
+}
+
+/* For large devices */
+@media screen and (min-width: 1024px) {
+    .main {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .container {
+        flex-direction: row;
+        position: relative;
+    }
+
+    .first-column-title,
+    .second-column-title,
+    .third-column-title {
+        font-size: var(--h1-font-size);
+    }
+
+    .first-column,
+    .second-column,
+    .third-column {
+        width: 300px;
+    }
+
+    .first-column-paragraph,
+    .third-column-paragraph {
+        padding: 0;
+        font-size: var(--normal-font-size);
+    }
+
+    .second-column-paragraph {
+        padding: 0 0.5rem 0 0;
+        font-size: var(--normal-font-size);
+    }
+
+    .buttons {
+        font-size: var(--normal-font-size);
+    }
+
+    .first-column {
+        border-radius: 0.5rem 0 0 0.5rem;
+    }
+    
+    .third-column {
+        border-radius: 0 0.5rem 0.5rem 0;
+    }
+
+    .footer {
+        position: absolute;
+        left: 50%;
+        bottom: 50px;
+        transform: translateX(-50%);
+        color: black;
+        font-size: var(--smaller-font-size);
+    }
+}
+
