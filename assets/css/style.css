@@ -61,6 +61,10 @@ body {
     font-size: var(--normal-font-size);
     background-color: var(--light-gray);
     color: var(--paragraph-white);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 h1, h2, h3 {
@@ -93,7 +97,6 @@ button {
     margin: var(--header-height) 1.5rem;
     display: flex;
     flex-direction: column;
-    flex-basis: 100%;
 }
 
 /*=============== FIRST COLUMN ===============*/
@@ -220,13 +223,6 @@ button {
 
 /* For large devices */
 @media screen and (min-width: 1024px) {
-    .main {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
     .container {
         flex-direction: row;
         position: relative;
@@ -266,14 +262,4 @@ button {
     .third-column {
         border-radius: 0 0.5rem 0.5rem 0;
     }
-
-    .footer {
-        position: absolute;
-        left: 50%;
-        bottom: 50px;
-        transform: translateX(-50%);
-        color: black;
-        font-size: var(--smaller-font-size);
-    }
 }
-
